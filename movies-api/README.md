@@ -55,7 +55,7 @@ npm run dev (Server: http://localhost:4000
 You should see: “Server running on http://localhost:4000”
 
 &nbsp;and “Connected to MongoDB”.
-<img width="1072" height="568" alt="Screenshot 2025-08-29 230621" src="https://github.com/user-attachments/assets/abf6db8e-6e24-4d35-ab36-88482f01f372" />
+<img width="1462" height="342" alt="npm run" src="https://github.com/user-attachments/assets/994cce7c-5d2a-419b-918b-b99a6e8e58e0" />
 
 
 ### 2\) Frontend (react-movie-assignment)
@@ -73,6 +73,7 @@ npm install
 npm start (App: http://localhost:3000
 
 )
+<img width="1912" height="977" alt="Screenshot 2025-08-29 232811" src="https://github.com/user-attachments/assets/8a6b873f-620f-4c1d-9f2a-9442f260cd64" />
 
 ### API Endpoints (Summary)
 
@@ -87,6 +88,7 @@ Auth
 Header for protected routes:
 
 Authorization: Bearer <token>
+<img width="1371" height="877" alt="Screenshot 2025-08-29 232903" src="https://github.com/user-attachments/assets/64ecee88-e0a1-40ff-b374-d8e43b406732" />
 
 ### User Lists (Movies)
 
@@ -103,6 +105,7 @@ Authorization: Bearer <token>
 • DELETE /users/me/watchlist/movies/:tmdbId
 
 (Stores TMDB numeric IDs on the user document.)
+<img width="1380" height="932" alt="Screenshot 2025-08-29 232952" src="https://github.com/user-attachments/assets/0c357870-eaa3-4311-abe0-1a351de4baf8" />
 
 ### Local Movies (Mongo collection)
 
@@ -117,6 +120,7 @@ TMDB Passthrough (uses TMDB\_KEY)
 • GET /tmdb/tv/popular
 
 • GET /tmdb/tv/:id
+<img width="1408" height="897" alt="Screenshot 2025-08-29 233108" src="https://github.com/user-attachments/assets/15810bd1-e934-467e-91bb-0720069f37cc" />
 
 ### Frontend Integration (Pages)
 
@@ -125,18 +129,7 @@ TMDB Passthrough (uses TMDB\_KEY)
 • Popular TV Shows page → calls backend GET /tmdb/tv/popular
 
 The React app uses axios with REACT\_APP\_API\_BASE to hit the backend.
-
-### Quick Test (Postman)
-
-POST /auth/signup → copy token
-
-GET /auth/me with Authorization: Bearer <token> → returns your user
-
-POST /users/me/favourites/movies { "tmdbId": 238 } → returns \[238]
-
-GET /tmdb/movies/top\_rated → returns TMDB JSON from backend
-
-POST /api/movies (create “Inception”), then GET /api/movies → shows it
+<img width="1902" height="920" alt="Screenshot 2025-08-29 233202" src="https://github.com/user-attachments/assets/04e7c9a2-09e3-44e5-8be7-77c49574ac23" />
 
 ### Notes
 

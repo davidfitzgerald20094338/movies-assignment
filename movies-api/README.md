@@ -1,30 +1,20 @@
 # Assignment 2 — Movies API + Integration
 
-
-
 Name: David Fitzgerald
 
-
+## Overview.
 
 This assignment adds a Node/Express backend API with MongoDB + JWT auth and integrates it with the existing React app from Assignment 1.
 
+### Repository Structure
 
-
-Repository Structure
-
-
-
-movies-assignment/
+### movies-assignment/
 
 • movies-api/ — Express + MongoDB API (this assignment)
 
 • react-movie-assignment/ — React app (Assignment 1), now calls the API
 
-
-
-What’s New (since A1)
-
-
+### What’s New (since A1)
 
 • Backend API (Express + Mongoose + JWT)
 
@@ -38,15 +28,9 @@ What’s New (since A1)
 
 • Frontend integration: React calls http://localhost:4000
 
-&nbsp;(axios)
+### How to Run
 
-
-
-How to Run
-
-1\) Backend (movies-api)
-
-
+### 1\) Backend (movies-api)
 
 Create a .env file (copy from .env.example) and fill values:
 
@@ -58,65 +42,39 @@ JWT\_SECRET=<any string>
 
 TMDB\_KEY=<your TMDB v3 key>
 
-
-
 Install \& start:
-
-
 
 cd movies-api
 
-
-
 npm install
-
-
 
 npm run dev (Server: http://localhost:4000
 
 )
 
+You should see: “Server running on http://localhost:4000”
 
+&nbsp;and “Connected to MongoDB”.
 
-You should see: “🚀 Server running on http://localhost:4000”
-
-&nbsp;and “✅ Connected to MongoDB”.
-
-
-
-2\) Frontend (react-movie-assignment)
-
-
+### 2\) Frontend (react-movie-assignment)
 
 Create a .env file (copy from .env.example):
 
 REACT\_APP\_API\_BASE=http://localhost:4000
 
-
-
 Install \& start:
-
-
 
 cd react-movie-assignment
 
-
-
 npm install
-
-
 
 npm start (App: http://localhost:3000
 
 )
 
-
-
-API Endpoints (Summary)
+### API Endpoints (Summary)
 
 Auth
-
-
 
 • POST /auth/signup — body { email, password } → returns { token }
 
@@ -124,17 +82,11 @@ Auth
 
 • GET /auth/me — requires header Authorization: Bearer <token> → returns { email, favouritesMovies, watchlistMovies }
 
-
-
 Header for protected routes:
 
 Authorization: Bearer <token>
 
-
-
-User Lists (Movies)
-
-
+### User Lists (Movies)
 
 • GET /users/me/favourites/movies
 
@@ -148,25 +100,15 @@ User Lists (Movies)
 
 • DELETE /users/me/watchlist/movies/:tmdbId
 
-
-
 (Stores TMDB numeric IDs on the user document.)
 
-
-
-Local Movies (Mongo collection)
-
-
+### Local Movies (Mongo collection)
 
 • GET /api/movies
 
 • POST /api/movies — example body: { "title": "Inception", "overview": "...", "releaseDate": "2010-07-16" }
 
-
-
 TMDB Passthrough (uses TMDB\_KEY)
-
-
 
 • GET /tmdb/movies/top\_rated
 
@@ -174,49 +116,27 @@ TMDB Passthrough (uses TMDB\_KEY)
 
 • GET /tmdb/tv/:id
 
-
-
-Frontend Integration (Pages)
-
-
+### Frontend Integration (Pages)
 
 • Top Rated Movies page → calls backend GET /tmdb/movies/top\_rated
 
 • Popular TV Shows page → calls backend GET /tmdb/tv/popular
 
-
-
 The React app uses axios with REACT\_APP\_API\_BASE to hit the backend.
 
-
-
-Quick Test (Postman)
-
-
+### Quick Test (Postman)
 
 POST /auth/signup → copy token
 
-
-
 GET /auth/me with Authorization: Bearer <token> → returns your user
-
-
 
 POST /users/me/favourites/movies { "tmdbId": 238 } → returns \[238]
 
-
-
 GET /tmdb/movies/top\_rated → returns TMDB JSON from backend
-
-
 
 POST /api/movies (create “Inception”), then GET /api/movies → shows it
 
-
-
-Notes
-
-
+### Notes
 
 • Do not commit real .env files (examples provided).
 

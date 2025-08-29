@@ -55,6 +55,8 @@ npm run dev (Server: http://localhost:4000
 You should see: “Server running on http://localhost:4000”
 
 &nbsp;and “Connected to MongoDB”.
+<img width="1072" height="568" alt="Screenshot 2025-08-29 230621" src="https://github.com/user-attachments/assets/abf6db8e-6e24-4d35-ab36-88482f01f372" />
+
 
 ### 2\) Frontend (react-movie-assignment)
 
